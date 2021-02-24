@@ -2,8 +2,8 @@ public class Rectangle {
     private int length, width;
 
     public Rectangle(int length, int width) {
-        this.length = length;
-        this.width = width;
+        setLength(length);
+        setWidth(width);
     }
 
     /**
@@ -12,6 +12,14 @@ public class Rectangle {
      */
     public boolean isSquare(){
         return length == width;
+    }
+
+    public int getArea(){
+        return length * width;
+    }
+
+    public String toString(){
+        return String.format("%d x %d rectangle %s", length, width, isSquare()?"is a square":"");
     }
 
     public int getPerimeter(){

@@ -76,4 +76,15 @@ class RectangleTest {
         assertEquals(80, square.getPerimeter());
     }
 
+    @Test
+    void constructorWithInvalidLength() {
+        assertThrows(IllegalArgumentException.class, ()->
+                new Rectangle(-1, 20));
+    }
+
+    @Test
+    void constructorWithInvalidWidth() {
+        assertThrows(IllegalArgumentException.class, ()->
+                new Rectangle(20, 0));
+    }
 }
